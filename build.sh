@@ -1,12 +1,14 @@
 #!/bin/bash
 
 # remove existing output files
-rm -f slides/*
+rm -rf slides/
+mkdir slides
 
-# generate html slides
+# generate html slides and pdfs
 for file_path in src/*.md; do
-    slide=$(basename "$file_path" .md).html
-    markdown-to-slides -d "$file_path"  -o slides/"$slide" -s template/style.css -l template/template.html
+    slide=$(basename "$file_path" .md)
+    markdown-to-slides -d "$file_path"  -o slides/"$slide".html -s template/style.css -l template/template.html
+#    markdown-pdf -o pdf/"$slide".pdf $file_path
     slide_index="$slide_index \"$slide\", "
 done
 

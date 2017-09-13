@@ -13,7 +13,6 @@ Interneto technologijos
 - Reikalingos žymių _vardų galiojimo sritys_ (angl. namespace)
 - Sutrumpintai tiesiog _vardų sritys_
 
-
 ## W3C specifikacija
 
 - [Namespaces in XML](http://www.w3.org/TR/REC-xml-names), 2009 Gruodis, trečia redakcija
