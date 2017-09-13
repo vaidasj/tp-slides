@@ -9,33 +9,32 @@ h1, h2, h3 {
 .remark-slide-content h2 { font-size: 2.4em; }
 .remark-slide-content h3 { font-size: 1.8em; }
 .remark-slide-content p { font-size: 1.4em; text-align: justify; }
-.remark-slide-content li { 
+.remark-slide-content ul > li, remark-slide-content ol > li {
     font-size: 1.2em; 
     margin-top: 0.6em;
     text-align: justify;
+    line-height: 1.25em;
 }
 .remark-slide-content li li { font-size: 1em; }
-
-.remark-slide-content li ul, .remark-slide-content li ol { margin-top: 0.6em; } 
-
+.remark-slide-content li ul, .remark-slide-content li ol { margin-top: 0.6em; }
 .footnote {
 	position: absolute;
 	bottom: 3em;
 }
-li { line-height: 1.25em; }
 .red { color: #fa0000; }
 .large { font-size: 2em; }
 a, a > code {
 	text-decoration: none;
 }
-code {
+.remark-slide-content code {
   background: none repeat scroll 0 0 #F8F8FF;
   border: 1px solid #DEDEDE;
   border-radius: 3px 	;
   padding: 0 0.2em;
+  line-height: normal;
 }
 .remark-code, .remark-inline-code { font-family: "Bitstream Vera Sans Mono", "Courier", monospace; }
-.remark-code-line-highlighted     { background-color: #373832; }
+.remark-code-line-highlighted, .remark-code-span-highlighted { background-color: rgba(95, 98, 82, 0.93); }
 .pull-left {
 	float: left;
 	width: 47%;
@@ -70,4 +69,19 @@ code {
 .remark-code {
 	display: block;
 	padding: 0.5em;
+    font-size: 20px;
+}
+img {
+    display: block;
+    margin: auto;
+}
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin-left: 1.5em;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+}
+blockquote p {
+  display: inline;
 }

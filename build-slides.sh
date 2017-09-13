@@ -12,3 +12,7 @@ done
 
 # write index json file
 echo "{ \"slides\": [$slide_index] }" | sed 's/\(.*\),/\1 /' >> slides/index.json
+
+# copy images
+mkdir slides/images
+cp images/* slides/images/
