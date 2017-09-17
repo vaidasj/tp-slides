@@ -19,7 +19,6 @@ Interneto technologijos
 - Aprašo standartinį būdą, kaip paskelbti naują vardų sritį, ir kaip žymes susieti su vardų sritimis, pvz.:
 
     ```xml
-    <?xml version="1.0"?>
     <bk:book
         xmlns:bk="http://loc.gov/books"
         xmlns:isbn="urn:ISBN:0-395-36341-6">
