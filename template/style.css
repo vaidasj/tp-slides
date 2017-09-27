@@ -88,3 +88,12 @@ blockquote {
 blockquote p {
   display: inline;
 }
+table {
+    border-collapse: collapse;
+    margin-top: 1.5em
+}
+table td, table th {
+    vertical-align: top;
+    border: 1px solid #AAAAAA;
+    padding: 5px 5px;
+}
