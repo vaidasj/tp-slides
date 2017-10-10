@@ -59,10 +59,10 @@ Interneto technologijos
 - Oficialiu standartu tapo 2013, kaip [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf) standarto dalis
 - Douglas Crockford savo tinklapyje [json.org](http://json.org) aprašė dar 2002 m. 
 - Yahoo and Google pradėjo naudoti JSON 2005 m. ir 2006 m.
-- __Alternatyvus__ [RFC 7159](https://tools.ietf.org/html/rfc7159) standartas pasirodė 2015 m.:
+- __Alternatyvus__ [RFC 7158](https://tools.ietf.org/html/rfc7158) standartas pasirodė tais pačiais metais:
   - _ECMA-404_ standartas aprašo tik leistiną sintaksę, _RFC 7158_ papildo saugumo ir suderinamumo aspektais
   - _RFC 7158_ naudoja _ECMA-404_ kaip pamatinį standartą
-  - _RFC 7158_ laikomas pagrindiniu specifikuojant JSON naudojimą internete (MIME _application/json_)
+  - 2014 m. _RFC 7158_ pakeitė [RFC 7159](https://tools.ietf.org/html/rfc7159), kuris laikomas pagrindiniu specifikuojant JSON naudojimą internete (MIME _application/json_)
 
 ## JSON ir JavaScript objektas
 
