@@ -11,8 +11,7 @@ Interneto technologijos
 <?xml version="1.0" encoding="UTF-8"?>
 <užsakymas data="2006-02-28"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:noNamespaceSchemaLocation="uzsakymas.xsd"
->
+    xsi:noNamespaceSchemaLocation="uzsakymas.xsd">
 </užsakymas>
 ```
 
@@ -27,7 +26,7 @@ xsi:noNamespaceSchemaLocation="uzsakymas.xsd"
 <?xml version="1.0" encoding="UTF-8"?>
 <užsakymas
     xmlns="http://uzsakymai.lt"
-xsi:schemaLocation="http://uzsakymai.lt uzsakymas.xsd"
+    xsi:schemaLocation="http://uzsakymai.lt uzsakymas.xsd"
     xmlns: xsi ="http://www.w3.org/2001/XMLSchema-instance">
     <prekiųSąrašas>...</prekiųSąrašas>
 </užsakymas>
@@ -71,11 +70,11 @@ elementFormDefault="qualified" >
 <?xml version="1.0"?>
 <xsd:schema
     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-	targetNamespace="http://www.camera.org"
-    xmlns:nikon="http://www.nikon.com"
-    xmlns:olympus="http://www.olympus.com"
-    xmlns:pentax="http://www.pentax.com"
-    elementFormDefault="unqualified">
+		targetNamespace="http://www.camera.org"
+    	xmlns:nikon="http://www.nikon.com"
+    	xmlns:olympus="http://www.olympus.com"
+    	xmlns:pentax="http://www.pentax.com"
+    	elementFormDefault="unqualified">
 
     <xsd:import namespace="http://www.nikon.com"
 		schemaLocation="Nikon.xsd"/>
