@@ -213,6 +213,13 @@ Interneto technologijos
 
 ## Schemų apjungimas
 
+
+
 ## Schemų praplėtimas
 
 ## Schemų pakartotinis panaudojimas
+
+## Kita
+
+The $schema keyword
+
