@@ -181,7 +181,7 @@ _Tokiu atveju nereikia pridėti naujos HTML žymės_
 - XHTML2 vis dar buvo tik šablonas, kurio nerealizavimo nei  vienas iš didžiųjų naršyklių gamintojų
 - W3C nusprendė prisidėti prie WHAT WG darbų
 - Įsteigta nauja W3C HTML darbo grupė
-- “Web Applications 1.0” specifikacija pervadinta į “HTML
+- “Web Applications 1.0” specifikacija pervadinta į HTML5
 - 2009 m. spalį nutraukiama XHTML2 darbo grupės veikla
 - Taigi, kas pirmi pateikia kodą – tie ir laimi
 

@@ -69,11 +69,11 @@ Interneto technologijos
 - Kontekstas _knygųSąrašas_:
 
 ```xml
-<xs:element name="`knygųSąrašas`" type="...>
+<xs:element name="`knygųSąrašas`" type="...">
     <xs:unique name="KnygųRibojimas">
         <xs:selector xpath="`grupė/knyga`"/>
         <xs:field xpath="`autorius/vardas`"/>
-        <xs:field xpath="`autorius/pavarde`"/>
+        <xs:field xpath="`autorius/pavardė`"/>
     </xs:unique>
 </xs:element>
 ```

@@ -483,7 +483,7 @@ Content: (annotation?, (element|choice|sequence)*)
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<užsakymas data="2006- 02 - 28">
+<užsakymas data="2006-02-28">
 	<pristatyti šalis="LT">
 		<vardas>Jonas Jonaitis</vardas>
 		<gatvė>Kalvarijų 5</gatvė>
