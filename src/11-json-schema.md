@@ -213,13 +213,120 @@ Interneto technologijos
 
 ## Schemų apjungimas
 
+- Apjungimui naudojami raktažodžiai
+  - `allOf`: validu pagal visas sudėtines schemas
+  - `anyOf`: validu pagal bent vieną sudėtinę schemą
+  - `oneOf`: validu pagal lygiai vieną sudėtinę schemą
 
+- Schemos nebūtinai skirtingi JSON pomedžiai ar failai
+- Gali būti naudojama nurodyti kelias reikšmės validacijos taisykles
 
-## Schemų praplėtimas
+```json
+{ "anyOf": [
+    { "type": "string", "maxLength": 5 },
+    { "type": "number", "minimum": 0 }
+] }
+```
+
+- `not` raktažodis skirtas uždraudimui: 
+
+```json
+{ "not": { "type": "string" } }
+```
 
 ## Schemų pakartotinis panaudojimas
 
-## Kita
+- `definitions` raktas leidžia nurodyti schemas, kurias norėsime panaudoti dar kartą
+- `$ref` raktažodis leidžia įterpti nuorodą į prieš tai apibrėžtą JSON schemą
 
-The $schema keyword
+```json
+{ "$ref": "#/definitions/adresas" }
+```
+- `$ref` turinys pateikiamas JSON Pointer formatu
+  - panašu į XPath kelią
+  - `#` - einamasis dokumentas
+  - `/` - kelio žingsniai
 
+```json
+{ "$ref": "definitions.json#/adresas" }
+```
+
+## Pavyzdys
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+
+  "definitions": {
+    "adresas": {
+      "type": "object",
+      "properties": {
+        "gatvė":    { "type": "string" },
+        "miestas":  { "type": "string" },
+        "šalis":    { "type": "string" }
+      },
+      "required": ["gatvė", "miestas", "šalis"]
+    }
+  },
+
+  "type": "object",
+
+  "properties": {
+    "sąskaitos_adresas": { "$ref": "#/definitions/adresas" },
+    "pristatymo_adresas": { "$ref": "#/definitions/adresas" }
+  }
+}
+```
+
+## Schemų praplėtimas
+
+- Derinant `$ref` ir raktažodžius `allOf`, `anyOf` bei `oneOf` galima realizuoti jau aprašytos schemos praplėtimą
+
+```json
+"pristatymo_adresas": {
+  "allOf": [
+    // įtraukiam bazinį adresą
+    { "$ref": "#/definitions/adresas" },
+
+    // ..ir praplečiam jį pristatymo adreso specifika
+    { "properties": {
+        "tipas": { "enum": [ "fizinis", "juridinis" ] }
+      },
+      "required": ["tipas"]
+    }
+  ]
+}
+```
+
+## `$schema` raktažodis
+
+- `$schema` raktažodis naudojamas paskelbti, kad šis JSON fragmentas yra JSON Schema
+- Taip pat leidžia nurodyti, kokia JSON Schema versija yra parašyta ši schema:
+  - http://json-schema.org/schema#
+  - http://json-schema.org/draft-04/schema#
+  - http://json-schema.org/draft-03/schema#
+- _Rekomenduojama_ kad visos JSON schemos turėtų `$schema` įrašą paskelbtą dokumento pradžioje
+
+```json
+{ "$schema": "http://json-schema.org/schema#" }
+```
+
+## `id` raktas
+
+- `id` gali atlieka dvi funkcijas:
+  - nurodo unikalų schemos identifikatorių
+  - nurodo _bazinį_ kelią, kurį naudos `$ref`
+- Geriausia praktika - naudoti URL:
+
+```json
+"id": "http://foo.bar/schemas/knyga.json"
+```
+
+- **Bet** jei mes tame pačiame faile nurodysime:
+
+```json
+{ "$ref": "asmuo.json" }
+
+```
+
+-  tai validatorius ieškos šio dokumento adresu: _http://foo.bar/schemas/asmuo.json_
