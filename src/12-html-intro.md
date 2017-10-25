@@ -1,4 +1,3 @@
-
 # HTML: Įvadas
 
 Interneto technologijos
