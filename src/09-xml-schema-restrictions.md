@@ -159,6 +159,12 @@ Interneto technologijos
 - `xs:keyref` žymę reikia paskelbti
     - arba toje pačioje žymėje, kaip ir `xs:key` / `xs:unique`
     - arba tos žymės tėvinėje/senelio/... žymėje
+- Leidžiamas tik **ribotas** XPath išraiškų poaibis:
+  - [Selector Value](https://www.w3.org/TR/xmlschema-1/#c-selector-xpath)
+  - [Permitted XPath Expressions](https://docstore.mik.ua/orelly/xml/schema/ch09_02.htm#xmlschema-CHP-9-SECT-2.5)
+- Nurodomas XPath kelias gali _eiti_ tik gilyn nuo elemento kuriame yra aprašytas raktas ar nuoroda į raktą:
+  - naudojantis `child` ašimi
+  - pradedant kelią išraiška: `.//`
 
 ## Pastabos dėl vardų sričių
 
