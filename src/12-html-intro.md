@@ -1,11 +1,10 @@
-
-# HTML Įvadas
+# HTML: Įvadas
 
 Interneto technologijos
 
 ## HTML
 
-- HyperText Markup Language – hiperteksto žymių kalba
+- **HyperText Markup Language** – hiperteksto žymių kalba
     - Žymių kalba, skirta vizualizuoti duomenis (paprastai vizualizaciją atlieka naršyklės)
 - _HTML 5.1 2nd Edition_ (ir XHTML5) W3C rekomendacija 2017 m. spalio 3
     - [https://www.w3.org/TR/html51/](https://www.w3.org/TR/html51/)
@@ -22,7 +21,7 @@ Interneto technologijos
 ## HTML. Kas yra hipertekstas
 
 - Hipertekstas konceptualiai buvo apibrėžtas dar 1941 metais
-- Dabartinis apibrėžimas: hipertekstas tai tekstas rodomas kompiuterio ar kito elektroninio įrenginio ekrane, turintis nuorodas (angl. hyperlink) į kitą tekstą kurį skaitytojas gali nedelsiant pasiekti.
+- Dabartinis apibrėžimas: **hipertekstas** tai tekstas rodomas kompiuterio ar kito elektroninio įrenginio ekrane, turintis nuorodas (angl. hyperlink) į kitą tekstą kurį skaitytojas gali nedelsiant pasiekti.
 - 1980-aisiais buvo sukurta pirmoji hiperteksto taikomoji programa _Hypercard_
 - Hiperteksto taikymų pradėjo daugėti, tačiau visi jie turėjo vieną trūkumą – visos hiperteksto nuorodos galėjo būti tik lokalios (į failus tame pačiame kompiuteryje)
 - Poreikis pateikti hiperteksto nuorodas globaliame kontekste buvo viena pagrindinių interneto vystymosi idėjų
@@ -46,8 +45,10 @@ Interneto technologijos
 ## HTML. Kaip kuriami standartai (1)
 
 - Paveiksliukų įterpimui skirta žymė `<img src =".. ">` atsirado dar 1993 metais
-- Kodėl ji tokia?
-- [http://1997.webhistory.org/www.lists/www-talk.1993q1/0182.html](http://1997.webhistory.org/www.lists/www-talk.1993q1/0182.html) pateikiamas pirmųjų interneto naršyklių autorių susirašinėjimas norint praplėsti HTML paveiksliukų įterpimo galimybėmis
+
+Kodėl ji tokia?
+
+- [Interneto archyve](http://1997.webhistory.org/www.lists/www-talk.1993q1/0182.html) pateikiamas pirmųjų interneto naršyklių autorių susirašinėjimas norint praplėsti HTML paveiksliukų įterpimo galimybėmis
 
 Trumpa santrauka:
 
@@ -82,7 +83,7 @@ _Tokiu atveju nereikia pridėti naujos HTML žymės_
 
 ## HTML. Kaip kuriami standartai (3)
 
-- Atsakymas paprastas – Marc Andreessen pirmasis realizavo savo pasiūlymą praktiškai Mosaic naršyklėje
+- Atsakymas paprastas – Marc Andreessen pirmasis realizavo savo pasiūlymą praktiškai _Mosaic_ naršyklėje
 - Išleistas kodas nugalėjo prieš teorines diskusijas, nors ir:
   - Nenurodė naudojamo grafikos formato
   - Neapibrėžė, kaip formatuoti apie jį esantį tekstą
@@ -94,7 +95,7 @@ _Tokiu atveju nereikia pridėti naujos HTML žymės_
 
 - Kiekvienos HTTP užklausos metu serveris apart puslapio turinio atsiunčia ir kelias antraštes (angl. headers)
 - Jos nėra naršyklių atvaizduojamos vartotojams, tačiau nurodo naršyklei kaip traktuoti gaunamą informaciją, pvz: `Content-Type: text/html`
-- Content type dar vadinama MIME type, nurodo gaunamos informacijos tipą
+- _Content type_ dar vadinama _MIME type_, nurodo gaunamos informacijos tipą
 - Tai vienintelis dalykas, kuris apsprendžia, kaip interpretuoti gaunamą informaciją, pvz:
   - Paveiksliukai: `image/jpeg`, `image/png`
   - HTML: `text/html`
@@ -106,7 +107,7 @@ _Tokiu atveju nereikia pridėti naujos HTML žymės_
 - 1995 m. išleidžiamas HTML 2. Tai _retro-spec_ standartas formalizuojantis populiariausias HTML savybes pasirodžiusias iki 1994 birželio
 - 1996 m. išleidžiamas HTML 3. Vėl retro-specifikacija formalizuojantis lenteles, teksto formatavimą apie paveiksliukus
 - 1997 m. gruodis išleidžiama HTML 4.
-- 1999 m. gruodis pasirodo HTML 4.
+- 1999 m. gruodis pasirodo HTML 4.01
 - Didžioji dalis HTML versijų buvo retro-specifikacijos, bandančios pasivyti naršyklių kūrėjus ir tuo pačiu pakreipti WWW vystymąsi teisinga linkme
 - HTML niekada nebuvo _grynas_ standartas ir visi bandymai jį išgryninti baigėsi nesėkmingai
 
@@ -125,7 +126,7 @@ _Tokiu atveju nereikia pridėti naujos HTML žymės_
 
 ## HTML ir XHTML (2)
 
-- 2000 m. pasirodo XHTML 1. Iš esmės tai HTML performuluotas XML terminais, nepridedant naujų elementų ar atributų
+- 2000 m. pasirodo XHTML 1.0 Iš esmės tai HTML performuluotas XML terminais, nepridedant naujų elementų ar atributų
 - XHTML 1.0 priede C yra leidžiama nenaudoti naujojo MIME tipo, taip palengvinant perėjimą nuo HTML prie XHTML
 - 2001 gegužę pasirodo XHTML 1.1:
   - Panaikinama C priede nurodyta išlyga
@@ -180,7 +181,7 @@ _Tokiu atveju nereikia pridėti naujos HTML žymės_
 - XHTML2 vis dar buvo tik šablonas, kurio nerealizavimo nei  vienas iš didžiųjų naršyklių gamintojų
 - W3C nusprendė prisidėti prie WHAT WG darbų
 - Įsteigta nauja W3C HTML darbo grupė
-- “Web Applications 1.0” specifikacija pervadinta į “HTML
+- “Web Applications 1.0” specifikacija pervadinta į HTML5
 - 2009 m. spalį nutraukiama XHTML2 darbo grupės veikla
 - Taigi, kas pirmi pateikia kodą – tie ir laimi
 

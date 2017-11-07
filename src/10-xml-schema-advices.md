@@ -39,10 +39,10 @@ Interneto technologijos
 
 ```xml
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-targetNamespace="http://uzsakymai.lt" xmlns: mano ="http://uzsakymai.lt"
+targetNamespace="http://uzsakymai.lt" xmlns:mano ="http://uzsakymai.lt"
 elementFormDefault="qualified" >
-    <xs:element name="užsakymas" type=" mano:UžsakymoTipas "/>
-    <xs:complexType name=" UžsakymoTipas ">
+    <xs:element name="užsakymas" type="mano:UžsakymoTipas"/>
+    <xs:complexType name="UžsakymoTipas">
         <xs:sequence>
             <xs:element name="prekiųSąrašas" type="PrekiųSąrašoTipas"/>
         </xs:sequence>

@@ -55,12 +55,12 @@ Interneto technologijos
   "type": "object",
   "properties": {
     "pavadinimas": { "type": "string" },
-    "isbn": { "type": "string" },
-    "kaina": { "type": "number", "minimum": 0 },
+    "isbn":        { "type": "string" },
+    "kaina":       { "type": "number", "minimum": 0 },
     "autorius": {
       "type": "object",
       "properties": {
-        "vardas": { "type": "string" },
+        "vardas":  { "type": "string" },
         "pavardė": { "type": "string" }
       }
     }
@@ -71,7 +71,7 @@ Interneto technologijos
 
 ## Duomenų tipai
 
-- Aprašomas naudojant `type`:
+- Tipas aprašomas naudojant `type`:
   - reikšmė: eilutė arba masyvas
   - masyvas įgalina nurodyti kelis skirtingus tipus
 - Baziniai tipai:
@@ -85,19 +85,19 @@ Interneto technologijos
 
 ## Duomenų tipai
 
-- vienas galimas tipas:
+- nurodytas vienas galimas tipas:
 
 ```json
 "pavadinimas": { "type": "string" },
 ```
 
-- keli galimi tipai:
+- nurodyti keli galimi tipai:
 
 ```json
 "pavadinimas": { "type": ["number", "string"] }
 ```
 
-> masyve privalo būti nurodyti tik unikalūs elementai
+> `type` masyve privalo būti tik unikalūs elementai
 
 ## `string` tipas
 
@@ -146,8 +146,8 @@ Interneto technologijos
 ## `object` tipas
 
 - Skirtas JSON objekto struktūrai aprašyti
-- `properties`: raktas - reikšmė poros, skirtos savybei aprašyti
-- `additionalProperties` - leidžia uždrausti arba aprašyti elgseną neaprašytų savybių atvžilgiu
+- `properties`: raktas - reikšmė poros, skirtos savybėms aprašyti
+- `additionalProperties` - leidžia apibrėžti validatoriaus elgseną neaprašytų savybių atvžilgiu
 - Validatoriai:
   - `required` - nurodo privalomas savybės
   - `minProperties` ir `maxProperties` leidžia nurodyti savybių objekte skaičių
@@ -234,7 +234,7 @@ Interneto technologijos
 { "not": { "type": "string" } }
 ```
 
-## Schemų pakartotinis panaudojimas
+## Pakartotinis panaudojimas
 
 - `definitions` raktas leidžia nurodyti schemas, kurias norėsime panaudoti dar kartą
 - `$ref` raktažodis leidžia įterpti nuorodą į prieš tai apibrėžtą JSON schemą
@@ -290,7 +290,7 @@ Interneto technologijos
 
     // ..ir praplečiam jį pristatymo adreso specifika
     { "properties": {
-        "tipas": { "enum": [ "fizinis", "juridinis" ] }
+        "tipas": { "enum": [ "namų", "darbo" ] }
       },
       "required": ["tipas"]
     }
@@ -313,7 +313,7 @@ Interneto technologijos
 
 ## `id` raktas
 
-- `id` gali atlieka dvi funkcijas:
+- `id` atlieka dvi funkcijas:
   - nurodo unikalų schemos identifikatorių
   - nurodo _bazinį_ kelią, kurį naudos `$ref`
 - Geriausia praktika - naudoti URL:
@@ -322,11 +322,11 @@ Interneto technologijos
 "id": "http://foo.bar/schemas/knyga.json"
 ```
 
-- **Bet** jei mes tame pačiame faile nurodysime:
+**Svarbu.** Jei mes tame pačiame faile nurodysime:
 
 ```json
 { "$ref": "asmuo.json" }
 
 ```
 
--  tai validatorius ieškos šio dokumento adresu: _http://foo.bar/schemas/asmuo.json_
+tai validatorius ieškos šio dokumento adresu: _http://foo.bar/schemas/asmuo.json_
