@@ -4,10 +4,10 @@ Interneto technologijos
 
 ## JavaScript
 
-- Skripto kalba, sukurta Netscape kompanijos
+- Skripto kalba, sukurta _Netscape_ kompanijos
     - Visos skripto kalbos paprastai yra interpretuojamos ir dinaminės (t.y., tipų surišimas yra dinaminis, kintamieji gali keisti savo tipą programos vykdymo metu)
 
-- Tai ne Java!
+- **Tai ne Java!**
     - Skirtumų tarp JavaScript ir Java yra daugiau nei panašumų
     - Java nėra nei interpretuojama, nei dinaminė kalba
 - Kiekvienas naršyklių gamintojas turi savą JavaScript realizaciją ir variklį:
@@ -27,12 +27,18 @@ ECMAScript yra naudojama ne tik narsykliu aplikose, pvz node.js
 - 1997 m. Netscape sukurta JavaScript kalba standartizuojama, kaip ECMAScript (ECMA-262 standartas)
 - 1999 m. gruodis ECMA-262 trečia redakcija (JavaScript 1.5)
 - 2011 birželį išėjo 5.1 ECMA-262 standarto redakcija (JavaScript 1.8.5)
-- ECMAScript 6 - 2015 birželio 17
-- ECMA-262 standarto penktos redakcijos naršyklių palaikymas
-    - [http://kangax.github.io/compat-table/es5/](http://kangax.github.io/compat-table/es5/)
-- ECMA-262 standarto šeštos redakcijos naršyklių palaikymas
-    - https://kangax.github.io/compat-table/es6/
+- ECMAScript 6 redakcija - 2015 birželio 17 d.
+- ECMAScript Next:
+	- ECMAScript 2016
+	- ECMAScript 2017
+	- ...
+- ECMAScript naršyklių palaikymas
+    - [http://kangax.github.io/compat-table/](http://kangax.github.io/compat-table/)
 
+???
+ECMAScript Next refers to new features of the ECMA-262 standard (commonly referred to as JavaScript) introduced after ECMAScript 2015. 
+New versions of ECMAScript specifications are released yearly. 
+This year, the ES2016 specification will be released and the ES2017 is the current ECMAScript draft specification.
 
 ## JavaScript galimybės
 
@@ -43,11 +49,10 @@ ECMAScript yra naudojama ne tik narsykliu aplikose, pvz node.js
     - Bendravimas su HTML puslapyje esančiais komponentais Applets, ActiveX)
 
 - Nauji HTML5 API pateikia daug naujų funkcijų kurių detaliau neaptarinėsime:
-
-- Piešimas (Canvas 2D API)
-- Failų skaitymas (File API)
-- Užklausos į kitus serverius (XMLHttpRequest2)
-- .....
+	- Piešimas (Canvas 2D API)
+	- Failų skaitymas (File API)
+	- Užklausos į kitus serverius (XMLHttpRequest2)
+	- .....
 
 
 ## JavaScript pavyzdys
@@ -72,530 +77,401 @@ ECMAScript yra naudojama ne tik narsykliu aplikose, pvz node.js
 ## Duomenų tipai
 
 - JavaScript turi šiuos duomenų tipus:
-    - Skaičiai: 42 arba3.
-    - Loginės(Boolean) reikšmės:truearbafalse
-    - Eilutės:"Kuku"
-    - nullreikšmė (ši reikšmė yra be tipo)
-       - JavaScript yracase sensitivekalba, null yra ne tas pats kaip Null, NULL, ar
-          panašiai.
-    - undefinedreikšmė: žymi, kad kintamasis yra neinicializuotas
-    - Objektai (JavaScript turi kai kurių OO kalbų savybių!), pvz., galima
+    - Skaičiai: _42_ arba _3.14159_
+    - Loginės (boolean) reikšmės: _true _arba _false_
+    - Eilutės: _"Kuku"_
+    - `null`: ši reikšmė yra be tipo. JavaScript yra _case sensitive_ kalba, `null` yra ne tas pats kaip `Null`, `NULL`, ar panašiai.
+    - `undefined`: žymi, kad kintamasis yra neinicializuotas
+    - Objektai: JavaScript turi kai kurių OO kalbų savybių
 
-###### sukurti datos objektą
-
-- Masyvai yra objektai!
-- Funkcijos (funkciją galima priskirti kintamajam ir/arba perduoti kaip
-
-###### parametrą)
-
+- **Masyvai yra objektai!**
+- Funkcijos (funkciją galima priskirti kintamajam ir/arba perduoti kaip parametrą)
 
 ## Automatinė tipų konversija
 
-- JavaScript yra dinamiškai tipizuota kalba (t.y., tipai kintamiesiems priskiriami tik
-
-programos vykdymo metu)
-
+- JavaScript yra dinamiškai tipizuota kalba (t.y., tipai kintamiesiems priskiriami tik programos vykdymo metu)
 - Kintamųjų paskelbimo metu tipų nurodyti nereikia, pvz.:
-    - var atsakymas = 42
+
+```js
+var atsakymas = 42
+```
+
 - Vėliau tam pačiam kintamajam galima priskirto kito tipo reikšmę:
-    - atsakymas = "Tam param tatam..."
-    - kintamojo tipas keičiamas _dinamiškai_ , jokios klaidos nebus!
-- Aritmetiniai operatoriai skirtingų tipų reikšmes konvertuoja į vieno tipo reikšmes
 
-automatiškai
+```js
+atsakymas = "Tam param tatam..."
+```
 
-- Sudėties operatorius, jei bent vienas operandas nėra skaičius, operandus verčia į eilutės tipo
-    reikšmes:
-       - x = "Ats.: " + 42 // reikšmė: "Ats.: 42"
-          y = 42 + " Lt." // reikšmė: "42 Lt."
+- Kintamojo tipas keičiamas _dinamiškai_, **jokios klaidos nebus!**
+
+## Automatinė tipų konversija
+
+- Aritmetiniai operatoriai skirtingų tipų reikšmes konvertuoja į vieno tipo reikšmes automatiškai
+- Sudėties operatorius, jei bent vienas operandas nėra skaičius, operandus verčia į eilutės tipo reikšmes:
+
+```js
+ x = "Ats.: " + 42 // reikšmė: "Ats.: 42"
+ y = 42 + " Lt."   // reikšmė: "42 Lt."
+```
+
 - Kiti operatoriai bando eilutės tipo reikšmes versti į skaitines:
-    - "37" - 7 // 30
-       "37" + 7 // 377 JavaScript -Įvadas 8
 
+```js
+"37" - 7 // 30
+"37" + 7 // 377
+```
 
 ## Kintamieji
 
 - Kintamąjį paskelbti galima dviem būdais:
-    - Naudojant raktinį žodį var:
-       - var x = 42
-    - Nenaudojant var:
-       - x = 42
+    - Naudojant raktinį žodį `var`:
+     
+     ```js
+     var x = 42
+     ```
+
+    - Nenaudojant `var`:
+     
+     ```js 
+     x = 42
+     ```
+
+## Kintamieji
+
 - Neinicializuotų kintamųjų naudojimas:
-    - Jei kintamasis buvo paskelbtas be var, bus klaida
-       x;
-       y = x+1; // klaida
-    - Jei su var, skaitiniame kontekste jo reikšmė bus NaN, kituose -
+    - Jei kintamasis buvo paskelbtas be `var`, bus klaida
+       
+    ```js   
+    x;
+    y = x+1; // klaida
+    ```
 
-##### undefined
+    - Jei su `var`, skaitiniame kontekste jo reikšmė bus `NaN`, kituose - `undefined`
 
-```
-var x;
-y = x+1; // NaN
-```
+	```js
+	var x;
+	y = x+1; // NaN
+	```
 
-## undefined ir null reikšmės
+## `undefined` ir `null` reikšmės
 
 - Yra galimybė patikrinti, ar kintamasis buvo inicializuotas:
 
-```
+```js
 var input;
-if(input === undefined){
-doThis();
+if (input === undefined) {
+    doThis();
 } else {
-doThat();
+    doThat();
 }
 ```
-- undefinedloginėse išraiškose yra verčiama į false:
 
-```
+- `undefined` loginėse išraiškose yra verčiama į `false`:
+
+```js
 function suma(a, b) {
-if (a && b)
-return a+b;
-else return 0;
+    if (a && b)
+        return a + b;
+    else return 0;
 }
 ```
-- nullreikšmė elgiasi kaip nulis skaitinėse išraiškose, ir kaip false loginėse
-    išraiškose:
-       var n = null;
-       n * 32; // bus 0
 
+## `undefined` ir `null` reikšmės
+
+- `null` reikšmė elgiasi kaip nulis skaitinėse išraiškose, ir kaip `false` loginėse išraiškose:
+
+```js
+var n = null;
+n * 32; // bus 0
+```
 
 ## Kintamųjų galiojimo sritys
 
-- Kintamieji, paskelbti funkcijų viduje, yra _lokalūs_ kintamieji, visi kiti yra _globalūs_
+- Kintamieji, paskelbti funkcijų viduje, yra _lokalūs_ kintamieji, visi kiti yra _globalūs_ kintamieji
+- Globalius kintamuosius galima paskelbti ir su `var`, ir be `var`, lokalius – tik su `var`
 
-kintamieji
-
-- Globalius kintamuosius galima paskelbti ir su var, ir be var, lokalius –tik su var
-
+```js
 var x; // globalus
-
-y; // globalus
+y;     // globalus
 
 function suma(a, b) {
 
-var s = a+b; // s yra lokalus
+    var s = a + b; // s yra lokalus
 
-return s;
-
+    return s;
 }
-
+```
 
 ## Skaitinės ir loginės konstantos
 
-- JavaScript neskiria sveikų skaičių nuo realių (kol kintamojo
-
-#### reikšmė sveika, kablelis nespausdinamas)
-
-- Šešioliktainiai skaičiai gali būti užrašyti, pridedant prefiksą
-
-#### 0x:
-
-- 0xFFFF
+- JavaScript neskiria sveikų skaičių nuo realių (kol kintamojo reikšmė sveika, kablelis nespausdinamas)
+- Šešioliktainiai skaičiai gali būti užrašyti, pridedant prefiksą `0x`:
+  - `0xFFFF`
 - Yra dvi loginės konstantos:
-- true
-- false
+  - `true`
+  - `false`
 
 
-## Konstantos-eilutės (string)
+## Eilutės (_string_)
 
 - Apskliaudžiamos kabutėmis arba apostrofais:
-
-###### "kuku"
-
-###### 'aha'
-
-###### "Katinas pasakė 'miau'"
-
-###### "pirma eilutė \n antra eilutė"
-
-- "\" naudojamas kaip escape simbolis
-
+  - "kuku"
+  - 'aha'
+  - "Katinas pasakė 'miau'"
+  - "pirma eilutė \n antra eilutė"
+- `\` naudojamas kaip _escape_ simbolis
 
 ## Escape simboliai
 
-Character Meaning
+| Simbolis | Reikšmė |
+| -------- | ------- |
+| `\b`  | Backspace |
+| `\f`  | Form feed |
+| `\n`  | New line |
+| `\r`  | Carriage return | 
+| `\t`  | Tab |
+| `\'`  | Apostrophe or single quote |
+| `\"`  | Double quote |
+| `\\`  | Backslash character (`\`) |
 
-\b (^) Backspace
-\f (^) Form feed
-\n (^) New line
-\r (^) Carriage return
-\t (^) Tab
-\' (^) Apostrophe or single quote
-\" (^) Double quote
-\\ (^) Backslash character (\)
-\ _XXX_ (^) The character with the Latin-1 encoding specified by up to three octal digits XXX
-between 0 and 377. For example, \251 is the octal sequence for the copyright symbol.
-\x _XX_ (^) The character with the Latin-1 encoding specified by the two hexadecimal digits XX
-between 00 and FF. For example, \xA9 is the hexadecimal sequence for the copyright
-symbol.
-\u _XXXX_ (^) The Unicode character specified by the four hexadecimal digits XXXX. For example,
-\u00A9 is the Unicode sequence for the copyright symbol.
+## Masyvai
 
+- Masyvai - paskelbiami su `[]`, numeruojami nuo **0**. 
+- Pvz.: trijų elementų masyvas:
 
-## Masyvai-konstantos
+```js
+var spalvos = ["juoda", "balta", "raudona"];
+```
 
-- Masyvai-konstantos paskelbiami su [], numeruojami nuo
-
-### 0. Pvz.: trijų elementų masyvas:
-
-- var spalvos = ["juoda", "balta", "raudona"];
 - Kai kuriuos masyvo elementus galima praleisti:
-- var spalvos = ["juoda", , "balta",
 
-#### "raudona"];
-
-- spalvos[0]– "juoda",
-
-#### spalvos[1]– undefined
+```js
+var spalvos = ["juoda", , "balta", "raudona"];
+spalvos[0]; // "juoda",
+spalvos[1]; // undefined
+```
 
 - Masyvo elementai gali būti skirtingų tipų!
-    - var strange = ["abc", 14, true, new Date()];
 
-
-## Objektai-konstantos
-
-- Objektą-konstantą paskelbti galime naudodami riestinius
-
-#### skliaustelius {}, kurių viduje rašomos savybės ir jų reikšmės :
-
-###### var automobilis = {marke: "Audi",
-
-###### turis: 2.0, spalva: "raudona"}
-
-###### alert(automobilis.marke);
-
-
-## Priskyrimo operatorius "="
-
+```js
+var strange = ["abc", 14, true, new Date()];
 ```
-Shorthand operator Meaning
-x += y x = x + y
+
+## Objektai 
+
+- Objektą paskelbti galime naudodami riestinius skliaustelius `{}`, kurių viduje rašomos savybės ir jų reikšmės :
+
+```js
+ var automobilis = {
+     marke: "Audi",
+     turis: 2.0,
+     spalva: "raudona"
+ }
+
+ console.log(automobilis.marke);
 ```
-```
-x -= y x = x - y
-x *= y x = x * y
-x /= y x = x / y
-x %= y x = x % y
-x <<= y x = x << y
-```
-```
-x >>= y x = x >> y
-x >>>= y x = x >>> y
-x &= y x = x & y
-x ^= y x = x ^ y
-```
-```
-x |= y x = x | y
-```
+
+## Priskyrimo operatorius `=`
+
+| Operatorius | Reikšmė |
+| ----------- | ------- |
+| `x += y`    | `x = x + y` |
+| `x -= y`    | `x = x - y` |
+| `x *= y`    | `x = x * y` |
+| `x /= y`    | `x = x / y` |
+| `x %= y`    | `x = x % y` |
+| `x <<= y`   | `x = x << y` |
+| `x >>= y`   | `x = x >> y` |
+| `x >>>= y`  | `x = x >>> y` |
+| `x &= y`    | `x = x & y` |
+| `x ^= y`    | `x = x ^ y` |
 
 ## Palyginimo operatoriai
 
-```
-Operator Description Examples returning
-true^1
-Equal (==) Returns true if the operands are equal. If the two operands
-are not of the same type, JavaScript attempts to convert
-the operands to an appropriate type for the comparison.
-```
-```
-3 == var
-"3" == var
-3 == '3'
-Not equal (!=) Returns true if the operands are not equal. If the two
-operands are not of the same type, JavaScript attempts to
-convert the operands to an appropriate type for the
-comparison.
-```
-```
-var1 != 4
-var2 != "3"
-```
-```
-Strict equal
-(===)
-```
-```
-Returns true if the operands are equal and of the same
-type.
-```
-3 === var
 
-```
-Strict not equal
-(!==)
-```
-```
-Returns true if the operands are not equal and/or not of
-the same type.
-```
-```
-var1 !== "3"
-3 !== '3'
-Greater than
-(>)
-```
-```
-Returns true if the left operand is greater than the right
-operand.
-```
-var2 > var
-
-```
-Greater than or
-equal (>=)
-```
-```
-Returns true if the left operand is greater than or equal to
-the right operand.
-```
-```
-var2 >= var
-var1 >= 3
-Less than (<) Returns true if the left operand is less than the right
-operand.
-```
-var1 < var
-
-```
-Less than or
-equal (<=)
-```
-```
-Returns true if the left operand is less than or equal to the
-right operand.
-```
-```
-var1 <= var
-var2 <= 5
-```
-(^1) These examples assume that var1 has been assigned the value 3 and var2 has been assigned the
-value 4.
-
+| Operatorius  | Aprašymas                       | Palyginimas (x = 5) | Rezultatas |
+|-----------|-----------------------------------|-----------|---------|
+| ==        | equal to                          | x == 8 <br> x == 5 <br> x == "5"   | false <br> true <br> true  | 
+| ===       | equal value and equal type        | x === 5 <br>  x === "5"    | true <br> false    |          
+| !=        | not equal                         | x != 8    | true    |  
+| !==       | not equal value or not equal type | x !== 5 <br> x !== "5" <br> x !== 8  | false <br> true <br> true    |        
+| >         | greater than                      | x > 8     | false   | 
+| <         | less than                         | x < 8     | true    | 
+| >=        | greater than or equal to          | x >= 8    | false   |  
+| <=        | less than or equal to             | x <= 8    | true    | 
 
 ## Aritmetiniai operatoriai
 
-- Įprasti +, -, *, /
-    - / visada atlieka **realių** skaičių dalybą (net jei abu operandai
+- Įprasti: 
+ - `+` - sudėtis
+ - `-` - atimti
+ - `*` - sandauga
+ - `/` - dalyba
+ - `%` - dalyba su liekana 
+ - `++` - padidina skaičių vienetu
+ - `--` - sumažina skaičių vienetu
 
-#### sveiki skaičiai)
-
-- 1/2 // returns 0.5 in JavaScript
-
-#### 1/2 // returns 0 in Java
+- `/` visada atlieka **realių** skaičių dalybą (net jei abu operandai sveiki skaičiai)
 
 ```
-Operator Description Example
-%
-(Modulus)
-```
-```
-Binary operator. Returns the integer remainder of dividing
-the two operands.
-```
-```
-12 % 5 returns 2.
-```
-```
-++
-(Increment)
-```
-```
-Unary operator. Adds one to its operand. If used as a prefix
-operator (++x), returns the value of its operand after
-adding one; if used as a postfix operator (x++), returns the
-value of its operand before adding one.
-```
-```
-If x is 3, then ++x sets x
-to 4 and returns 4,
-whereas x++ sets x to 4
-and returns 3.
---
-(Decrement)
-```
-```
-Unary operator. Subtracts one to its operand. The return
-value is analogous to that for the increment operator.
-```
-```
-If x is 3, then --x sets x
-to 2 and returns 2,
-whereas x-- sets x to 2
-and returns 3.
-```
+1/2 // grąžina 0.5 JavaScript
+1/2 // grąžina 0 Java
+```	
 
 ## Loginiai operatoriai
 
-```
-Operator Usage Description
-```
-```
-&& expr1 &&
-expr
-```
-```
-(Logical AND) Returns expr1 if it can be converted to false; otherwise,
-returns expr2. Thus, when used with Boolean values, && returns true if
-both operands are true; otherwise, returns false.
-```
-```
-|| expr1 ||
-expr
-```
-```
-(Logical OR) Returns expr1 if it can be converted to true; otherwise,
-returns expr2. Thus, when used with Boolean values, || returns true if
-either operand is true; if both are false, returns false.
-```
-```
-! !expr^ (Logical NOT) Returns false if its single operand can be converted to
-true; otherwise, returns true.
-```
+- `&&` - loginis IR 
+  - `expr1 && expr`
+- `||` - loginis ARBA
+  - `expr1 || expr`
+- `!`  - loginis neigimas
+  - `!expr` 
 
 ## Specialūs operatoriai
 
-- new – skirtas kurti objektus
+- `new` – skirtas kurti objektus
 
-###### var date = new Date();
+```js
+var date = new Date();
+```
 
-- this– skirtas prieiti prie einamojo objekto
+- `this` – skirtas prieiti prie einamojo objekto
 
-###### <input type="text" name="amzius"
+```js
+<input type="text" name="amzius" onchange="validate(this)"/>
 
-###### onchange="validate( this )"/>
+ function validate(obj) {
 
-###### function validate(obj) {
+     if ((obj.value < 0) || (obj.value > 200))
 
-###### if ((obj.value < 0) || (obj.value > 200))
+         alert("Bloga reikšmė!")
 
-###### alert("Bloga reikšmė!")
-
-###### }
-
+ }
+ ```
 
 ## Sakiniai
 
-- Blokai if-then-else, switch, for, while, do-
-
-#### while tokie patys kaip ir Java/C++ kalbose
-
+- Blokai _if-then-else_, _switch_, _for_, _while_, _do-while_ tokie patys kaip ir Java/C++ kalbose
 - Sakiniai baigiami kabliataškiu
-- (!) for ciklo kintamuosius reikia paskelbti su var, ne su int
+- **`for` ciklo kintamuosius reikia paskelbti su `var`, ne su `int`**
 
-###### for( var i=1, var fact=1; i<10; i++, fact*=i) {
+```js
+ for (var i = 1, var fact = 1; i < 10; i++, fact *= i) {
 
-###### document.write(i + "! = " + fact);
+     document.write(i + "! = " + fact);
 
-###### document.write("<br>");
+     document.write("<br>");
 
-###### }
-
+ }
+```
 
 ## Funkcijos
 
-- Paskelbiamos su raktiniu žodžiu function
+- Paskelbiamos su raktiniu žodžiu `function`
 - Gali grąžinti rezultatą, gali ir negrąžinti
 
-#### function suma(a, b) {
+```js
+ function suma(a, b) {
 
-#### if (a && b)
+     if (a && b)
 
-#### return a+b; // else atveju nieko negrąžiname
+         return a + b; // else atveju nieko negrąžiname
 
-#### }
+ }
+```
 
 - Funkciją kviesti galima su bet kokiu parametrų skaičiumi
-    - suma(1, 2); suma(1); suma(); suma("lala", 14, true);
 
+```js
+suma(1, 2); 
+suma(1); 
+suma(); 
+suma("lala", 14, true);
+```
 
 ## Funkcijos argumentų masyvas
 
-- Visi funkcijai paduoti argumentai yra saugomi masyve
+- Visi funkcijai paduoti argumentai yra saugomi masyve `arguments[]`
 
-##### arguments[]
+- Pavyzdys: funkcija, sujungianti visus argumentus į eilutę, naudodama pirmą argumentą kaip skirtuką:
 
-- Pavyzdys: funkcija, sujungianti visus argumentus į eilutę,
-
-##### naudodama pirmą argumentą kaip skirtuką:
-
+```js
 function myConcat(separator) {
 
-```
-result="";
-// praleidžiam pirmą argumentą (skirtuką):
-for (var i=1; i<arguments.length; i++) {
-result += arguments[i] + separator;
+    result = "";
+    // praleidžiam pirmą argumentą (skirtuką):
+    for (var i = 1; i < arguments.length; i++) {
+        result += arguments[i] + separator;
+    }
+    return result;
 }
-return result;
 ```
-}
 
 - Galime šia funkciją kviesti taip:
-    - myConcat(":", "AB", "CD", "EF");
 
+```js
+myConcat(":", "AB", "CD", "EF");
+```
 
 ## Standartinės funkcijos
 
-- parseInt(String [, radix])– verčia eilutę į skaičių
+- `parseInt(String [, radix])` – verčia eilutę į skaičių pagal nurodytą skaičiavimo sistemą (dešimtainė pagal nutylėjimą)
 
-#### pagal nurodytą skaičiavimo sistemą (dešimtainė pagal
+```js
+parseInt("123") === 123;   // true
+parseInt("12abc") === 12;  // true
+parseInt("a", 16) === 10;  // true
+parseInt("a");             // NaN
+```
+- patikrinimas, ar kintamojo reikšmė sveikas skaičius: 
 
-#### nutylėjimą)
+```js
+parseInt(x) == x;
+```
 
-- parseInt("123") === 123
-- parseInt("12abc") === 12
-- parseInt("a", 16) === 10
-- parseInt("a") – grąžins NaN
-- Kaip patikrinti, ar kintamojo reikšmė sveikas skaičius:
-- parseInt(x) == x
-- isNaN(value)– tikrina, ar paduotas argumentas yra
+- `isNaN(value)` – tikrina, ar paduotas argumentas yra reikšmė `NaN`
 
-#### reikšmė NaN
-
+???
+Note: Only the first number in the string is returned!
+A Number. If the first character cannot be converted to a number, NaN is returned
 
 ## Taikymai: datos validavimas
 
+```js
 function checkDate(yearStr, monthStr, dayStr)
-if (yearStr != parseInt(yearStr)) {
-return false;
+    if (yearStr != parseInt(yearStr)) {
+        return false;
+    }
+    ...
+    
+    year = parseInt(yearStr);
+    month = parseInt(monthStr)-1; // Sausis - 0
+    day = parseInt(dayStr);
+    if (month < 0 || month > 11) {
+        ...
+    }
+    var date = new Date(year, month, day);
+    if (date.getDate() != day) {
+        alert("Neteisinga data");
+        return false;
+    }
 }
-...
-
-year = parseInt(yearStr);
-month = parseInt(monthStr)-1; // **Sausis - 0**
-day = parseInt(dayStr);
-if (month < 0 || month > 11) {
-...
-}
-var date = new Date(year, month, day);
-if (date.getDate() != day) {
-alert("Neteisinga data");
-return false;
-}
-}
+```
 
 
 ## Įvykių apdorojimas
 
 - Pavyzdys:
 
-##### <form name="manoforma" action="...">
-
-##### ...
-
-##### <input type="button" value="Paspausk"
-
-##### onClick="funk()" />
-
-##### ...
-
-##### </form>
+```html
+ <form name="manoforma" action="...">
+ ...
+ <input type="button" value="Paspausk" onClick="funk()" />
+ ...
+ </form>
+```
 
 - Kiti įvykiai:
-    - onChange
-    - onFocus, onBlur
+    - _onChange_
+    - _onFocus, onBlur_
     - ...
-
-
-
