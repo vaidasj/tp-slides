@@ -20,9 +20,11 @@ $ npm install markdown-to-slides -g
 - A specific subset of _remark.js_ syntax should be used: [The document mode](https://github.com/partageit/markdown-to-slides#the-document-mode-convert-markdown-documents-not-aimed-to-slides)
 - Full _remark.js_ syntax can be found on their [wiki](https://github.com/gnab/remark/wiki)
 - To add images to the slides just place image under `images` directory and refence it in the `.md` file like this:
- ```md
+
+ ```
  ![alt text](images/<file-name> "<title>")
  ```
+ 
 - Check already created slides under `src` directory for examples
 
 ## Building HTML files
