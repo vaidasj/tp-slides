@@ -1,4 +1,4 @@
-# CSS – kaskadinės stilių lentelės
+# CSS: Kaskadinės stilių lentelės
 
 Interneto technologijos
 
