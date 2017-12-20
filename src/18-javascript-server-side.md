@@ -1,16 +1,6 @@
-# Įvadas į node.js
+# JavaScript: node.js
 
 Interneto technologijos
-
-## Turinys
-
-- Kas yra node.js? Prielaidos atsiradimui
-- Node.js ypatybės
-- Asinchroninis programavimas
-- Web aplikacijų kūrimas su node.js
-- Node.js modulių sistema	
-- Node package manager(NPM)	
-- Apibendrinimas	
 
 ## Kas yra node.js?
 
@@ -139,6 +129,8 @@ setInterval(countSeconds, 1000);
 - Rezultato apdorojimo funkcijos turi bent vieną parametrą(gali būti ir daugiau)
 - Klaidos apdorojamos per callback mechanizmą
 
+## Asinchroninis programavimas: callback mechanizmas
+
 ```js
 const request = require('request');
 const url = 'http://someurl.com';
@@ -151,8 +143,8 @@ function loadData(cb) {
 });
 
 loadPersonalData(function (err, data) {
-	if (err) {
-		return console.error(err)
+	if (err) { 
+		return console.error(err) 
 	}
 	return console.log(data)
 });
@@ -234,18 +226,16 @@ http.createServer(function (req, res) {
 - Leidžia "patch" versijų atnaujinimus: `~1.2.0`
 - tiksli versija `1.2.0`
 
-## Apibendrinimas: privalumai/trūkumai
+## node.js privalumai
 
-Node.js privalumai:
 - Efektyviai išnaudoja resursus programose su daug IO operacijų
 - Didžiulė ekosistema(NPM)
 - Minimalistinis karkasas
 - Lengva greitai pradėti naują projektą, labai gerai tinka prototipavimui
 - Galima naudoti tą pačią kalbą (JavaScript) kurti tiek kliento, tiek serverio aplikacijoms	
 
-Trūkumai:
+## node.js trūkumai
+
 - Nėra efektyvu rašyti programas, kur atliekami sudėtingi skaičiavimai
 - Nėra garantijos, kad pasirinktos bibliotekos bus atnaujinamos (nėra korporacijų palaikymo)
 - Asinchroninis programavimas reikalauja daugiau įgūdžių
-
-## Klausimai
