@@ -51,13 +51,22 @@ $.ajax({
  - Fetch funkcija grąžina `Promise` tipo JavaScript objektą
 
 ```
-fetch('https://yesno.wtf/api')
-  .then(function(response) {
-    console.log('Success: ' + response)
-  })
-  .catch(function(error) {
-    console.log('Error: ' + error);
-  });
+fetch('http://www.mocky.io/v2/5dedcd19330000590098420a')
+    .then(() => console.log('SUCCESS'))
+    .catch(() => console.log('ERROR'));
+```
+
+- Lyginant su `XMLHttpRequest`
+
+```
+var xhr = new XMLHttpRequest();
+xhr.onload = () => console.log('SUCCESS');
+xhr.onerror = () => console.log('ERROR');
+xhr.open(
+  'GET', 
+  'http://www.mocky.io/v2/5dedcd19330000590098420a'
+);
+xhr.send();
 ```
 
 ### Promise tipo objektai
@@ -78,10 +87,10 @@ fetch('https://yesno.wtf/api')
 
 * Vadinami "Multipage Web Applications"
 * Vartotojui atlikus veiksmą naršyklė atsisiunčia naują puslapį iš serverio ir jį atvaizduoja
-* Didžioji dalis logikos yra serveryje
-* Klientinė aplikacijos dalis atsakinga tik už atvaizdavimą
+* Didžioji dalis logikos yra serveryje, o klientinė aplikacijos dalis atsakinga tik už atvaizdavimą
 * Siekiant pagerinti vartotojo patirtį dalis informacijos gali būti užkraunama dinamiškai
-* Pavyzdžiai: stackoverflow.com, amazon.com
+
+![mvc](images/mvc.png "mvc")
 
 ## Vieno puslapio aplikacijos
 
@@ -136,26 +145,26 @@ Single Page Applications (SPA)
 
 ![no-js](images/facebook-no-js.png "no-js")
 
-## SPA trūkumai
-
-* Reikalauja daugiau kliento naršyklės resursų - apkrova persikelia iš serverio į naršyklę
-* Ne visi paieškos varikliai vykdo JavaScript kodą. Tie kurie nevykdo nematys turinio _(facebook pavyzdys be JavaScript)_, tačiau Google vykdo
-* Pirmas puslapio užkrovimas sąlyginai lėtas. Dalinai sprendžiama progresyviu JavaScript užkrovimu
-
 ## SPA privalumai
 
-* Po pirmo puslapio užkrovimo veikia greitai
+* Aplikacijos greitis (nors pirmas užsikrovimas gali trukti ilgiau)
   * Pvz: navigacija tarp puslapių, kuomet duomenys reikalingi naujam puslapiui jau buvo užkrauti
 * **Gera varotojo patirtis** - nereikia laukti kol persikraus visas puslapis naviguojant
   * Vartotojo patirtis panaši, kaip naudojantis mobiliąja aplikacija
 
-## jQuery ir SPA
+## SPA trūkumai
+
+* Reikalauja daugiau kliento naršyklės resursų - apkrova persikelia iš serverio į naršyklę
+* Ne visi paieškos varikliai vykdo JavaScript kodą. Tie kurie nevykdo nematys turinio _(facebook pavyzdys be JavaScript)_, tačiau Google vykdo
+* Pirmas puslapio užkrovimas sąlyginai lėtas. Dalinai sprendžiama 'tingiu JavaScript užkrovimu' (_Lazy loading_).
+
+## jQuery ir SPA (1)
 
 * jQuery turi reikiamas funkcijas SPA kūrimui:
   * Galima dinamiškai keisti turinį, manipuliuoti HTML medžiu naudojantis `$()` selektorius
   * Galima dinamiškai užkrauti duomenis į naršyklę `$.ajax()` pagalba
 
-## jQuery ir SPA
+## jQuery ir SPA (2)
 
 * Populiarėjant vieno puslapio aplikacijoms (SPA) programos veikiančios naršyklėje tapo vis sudėtingesnės
 * Sudėtingesnės reiškia - daugiau kodo, daugiau taisyklių, lengviau pasimesti ir įvelti klaidų
@@ -164,7 +173,7 @@ Single Page Applications (SPA)
   * atvaizdavimo sluoksnis atskirtas nuo logikos
   * nedublikuoti kodo - stengtis išskaidyti į pernaudojamus komponentus
 
-## jQuery ir SPA
+## jQuery ir SPA (3)
 
 * jQuery visiškai nesprendžia kodo moduliarumo, skaitomumo ir pernaudojamo problemų
 * jQuery tinka mažom web aplikacijom kurti - tam turi visas reikiamas funkcijas
@@ -193,7 +202,7 @@ Single Page Applications (SPA)
 * **AngularJS 1.X** - (2010 metai, Google) - kiek vėliau populiarumu pralenkė _Backbone_
 * Turi daugiau funkcionalumo nei backbone. (_two-way data binding_, _dependency injection_)
 * Lygiai taip pat kaip **backbone**, padeda struktūrizuoti aplikaciją, atskirti elementus pagal paskirtį.
-* Angular 2 versija buvo visiškai perdaryta. Dėl to migracija iš 1 versijos į 2 buvo pakankamai sudėtinga. 2 ir vėlesnių Angular versijų populiarumas sąlyginai mažėjo
+* Angular 2 versija (2016) buvo visiškai perdaryta. Dėl to migracija iš 1 versijos į 2 buvo pakankamai sudėtinga. 2 ir vėlesnių Angular versijų populiarumas sąlyginai mažėjo
 
 ## React.js
 
@@ -271,7 +280,7 @@ Single Page Applications (SPA)
 
 * JSX nėra palaikomas naršyklių. Todėl norint naudoti reikia sutranspiliuoti į JavaScript kodą
 * Tam naudojami papildomi įrankiai, pvz. [Babel](https://babeljs.io/) 
-* [Transpiliuoto kodo pavyzdys](https://goo.gl/MqfRvx)
+* [Transpiliuoto kodo pavyzdys](https://tinyurl.com/u28vl5l)
 
 
 ## JSX taisyklės
@@ -286,10 +295,12 @@ Single Page Applications (SPA)
  - Elementu rinkinys visuomet turi būti apvilktas į vieną tėvinį elementą, pavyzdžiui:
 
 ```html
-<div>
-  <TodoItem />
-  <TodoItem />
-</div>
+const Component = (props) => (
+  <>
+    <TodoItem onClick={() => props.onClick(1)} />
+    <TodoItem onClick={() => props.onClick(2)} />
+  </>
+);
 ```
 
 ## React komponento pavyzdys
@@ -316,7 +327,21 @@ class ButtonCounter extends React.Component {
 }
 ```
 
-[Demo](https://jsfiddle.net/zygisx/j8nsdban/5/)
+[Demo](https://jsfiddle.net/yu360owa/8/)
+
+## React  hooks (16.8+)
+
+```js
+  function ButtonCounter () {
+    const [count, setCount] = React.useState(0);
+    return (
+      <button onClick={() => setCount(count + 1) }>
+        {count}
+      </button>
+    );
+  }
+```
+[Demo](https://jsfiddle.net/40875hpo/6/)
 
 ## React komponentų atsinaujinimas
 
@@ -332,8 +357,16 @@ class ButtonCounter extends React.Component {
  - Jei vartotojui atliekant bet kokį veiksmą puslapiui reikėtų iš naujo perpiešti (rerender) visus elementus - puslapis veiktų labai lėtai ir nebūtų našus
  - React tai sprendžia su virtualiu DOM
  - Perpiešimas atliekamas ne su realiu DOM medžiu, bet su virtualia jo reprezentacija atmintyje (_virtual DOM_)
- - Kuomet komponentai perpiešiami atmintyje, react palygina virtualų DOM medį su realiu HTML dokumentu ir pakeičia tik tas vietas kurios pasikeitė
+ - Kuomet komponentai perpiešiami atmintyje, react palygina virtualų DOM medį su realiu DOM medžiu ir pakeičia tik tas vietas kurios pasikeitė
 
+## React Virualus DOM pavyzdys
+
+![react-components](images/v-dom.png "react-components-example")
+- Įvyksta veiksmas (pvz `setState`)
+- React padaro pokyčius VDOM
+- React VDOM yra sulyginamas su realiu DOM
+- Nustatomos `Dirty` žymės
+- `Dirty` žymės ir jų vaikai yra perpiešiami
 
 ## React privalumai
 
@@ -344,14 +377,14 @@ class ButtonCounter extends React.Component {
 
 ### Keli trūkumai
 
- - Reikalauja nemažai konfigūracijos. 
+ - Reikalauja nemažai konfigūracijos.
  - JSX turi būti transipiuojamas į JavaScript
  - Jei aplikacija maža ir nėra daug dinaminio turinio verčiau naudoti paprastesnę biblioteką
  - Nepalaiko Internet Explorer 8 ir žemesnių versijų
 
 ### React Demo
 
-[Demo](https://jsfiddle.net/zygisx/6zpx8pah/)
+[Demo](https://jsfiddle.net/2bsjux3c/3/)
 
 <section style="display: flex; flex-direction: row;">
   <img width="300" src="images/react-demo-app.png">
