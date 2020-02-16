@@ -1,89 +1,157 @@
-# Interneto technologijos
+# Technologinės platformos
+
+**Programų sistemų kūrimas**
 
 Organizaciniai klausimai
 
-Pratybų atsiskaitymo tvarka
-
-Egzaminas
-
 ## Apie kursą
 
-Kursą dėsto lektorius Vaidas Jusevičius:
+Kursą dėsto partnerystės docentas Vaidas Jusevičius:
+
 - El. paštas: [vaidas.jusevicius@mif.vu.lt](vaidas.jusevicius@mif.vu.lt)
-- Tinklapis: [http://www.mif.vu.lt/~vaidasj](http://www.mif.vu.lt/~vaidasj)
+- Tinklapis: [http://www.mif.vu.lt/~vaidasj/tp](http://www.mif.vu.lt/~vaidasj/tp)
+- Modulio aprašas: [programų sistemų kūrimas](https://klevas.mif.vu.lt/~ragaisis/PSK_2020/6s_PSkurimas_2020.pdf)
+
+> Atkreipkite dėmesį į savarankiško darbo valandų kiekį!
+
+## Tinklapis
+
+Jame:
+
+- Skaidrės
+- Reikalavimai grupiniam projektui
+- Reikalavimai laboratoriniams darbams
+- Papildoma mokomoji medžiaga
+- Informacija:
+  - Atsiskaitymų terminai
+  - Naujienos
+
+Nebus:
+
+- Informacijos apie TSP (bet ji bus kito dėstytojo puslapyje)
 
 ## Kurso turinys
 
-Kurso metu nagrinėjami pamatiniai interneto technologijų standartai:
-1. XML meta-kalba, XML dokumentai
-2. JSON duomenų apsikeitimo formatas
-3. Vardų sritys XML dokumentuose
-4. XPath 
-5. XML ir JSON Schema
-6. HTML5
-7. CSS 
-8. JavaScript
+**3-tier Multilayer Reference Architecture**
 
-## Kurso tikslas
+![3-tier Multilayer](images/3-tier-architecture.png "3-tier Multilayer")
 
-Kurso tikslas – supažindinti su internetinių technologijų formaliais pagrindais, todėl kiekviena tema nėra išdėstoma pilnai, bet išdėstomi sudėtingiausi/pamatiniai aspektai:
+## Kurso turinys
 
-- XPath: formalus modelis – kaip formuojamos mazgų aibės, kaip veikia konvertavimas tarp tipų
+- UI (Presentation)
+  - JS Web Frameworks (client-side) vs MVC server-side Web Frameworks
+  - Kada kokį pasirinkti?
+- Dalykinis funkcionalumas (Business logic):
+  - Kodėl vyrauja komponentinės technologijos? Kas tai yra?
+  - Kas yra Dependency Injection? Kuo tai naudinga?
+- Duomenų prieiga (Data access):
+  - Kas yra ORM? 
+  - Kas yra DAO? 
+  - Kuo jie skiriasi? Kada kurį geriau naudoti?
 
-  ```xquery 
-  //knyga/kaina < //žurnalas/kaina
-  ```
+## Kurso turinys
 
-- CSS: kaskadų taisyklės, konfliktai (viena taisyklė liepa naudoti raudoną spalvą, kita – mėlyną)
-- Javascript - programavimo kalba tiek kliento, tiek serverio pusėje 
+- Įvadas į Java EE ir praktiniai patarimai 
+  - JPA – Java Persistence API
+  - DAO – MyBatis
+  - CDI – Contexts and Dependency Injection
+  - JSF – JavaServer Faces
+  - JAX-RS – RESTful services
+- Svetainėje pateiktų skaidrių neužteks!
+  - Daug kas bus pasakoma per paskaitas žodžiu
 
-## Įgyjami gebėjimai
+## Kurso turinys
 
-Įsisavinus kursą, įgyjami gebėjimai:
-- _Pamatinių_ interneto technologijų standartų suvokimas ir gebėjimas taikyti praktikoje
-- _Naujų_ internetinių technologijų įsisavinimas be didelių pastangų:
+**Sistemų evoliucija**
 
-  - Naujos XPath, XML Schema, JSON, HTML, CSS versijos
-  - Naujos technologijos, pvz.: Xquery, OWL, RDF
-  - Naujos Javascript bibliotekos ir karkasai
-  
-## Organizaciniai klausimai
+- eBay (penkta karta)
+  - monolitinis Perl -> monolitinis C++ -> Java -> microservices
+- Twitter (trečia karta)
+  - monolitinis Rails -> JS / Rails / Scala -> microservices
+- Amazon (n-ta karta)
+  - monolitinis C++ -> Perl / C++ -> Java / Scala -> microservices
 
-Skaidrės, praktinių užduočių aprašymas, terminai ir kita informacija pateikiama:
+> https://www.infoq.com/presentations/reactive-services-scale/
 
-- [http://www.mif.vu.lt/~vaidasj/it/](http://www.mif.vu.lt/~vaidasj/it/)
+- Kas yra reaktyvi sistema?
 
-Skirstymas į pogrupius
+???
 
-- Visos grupės suskirstytos į 2 pogrupius
-- Suskirstymą paskelbs pratybų dėstytojai
-- Praktines užduotis privaloma atsiskaityti pas savo pogrupio pratybų dėstytoją
+It is convenient to distinguish roughly between three kinds of computer programs. 
 
-## Vertinimas: terminai
+- Transformational programs compute results from a given set of inputs; typical examples are compilers or numerical computation programs. 
+- Interactive programs interact at their own speed with users or with other programs; from a user point of view, a time-sharing system is interactive. 
+- Reactive programs also maintain a continuous interaction with their environment, but at a speed which is determined by the environment, not the program itself. 
 
-- 5 (4 + 1) balai iš pratybų, 6 balai iš egzamino
-- Užduotims yra atsiskaitymo terminai
-- Vieną savaitę galima vėluoti, bet bus skiriama pusė įvertinimo, vėliau – 0 balų
-- Papildomas balas (savanoriškai) – mini užduotys pratybų metu
-- Sesijos metu praktinių atsiskaitymų nebus
+Interactive programs work at their own pace and mostly deal with communication, while reactive programs only work in response to external demands and mostly deal with accurate interrupt handling. Real-time programs are usually reactive. However, there are reactive programs that are not usually considered as being real-time, such as protocols, system drivers, or man-machine interface handlers.
 
-## Vertinimas: praktinės užduotys
+## Kurso turinys
 
-- Kiekvienos užduoties atsiskaitymui būtina žinoti ją atitinkančią teoriją (pagal atitinkamas paskaitas)
-- Atsiskaitymą priimantis dėstytojas turi teisę neužskaityti gerai atliktos užduoties, jei nebus atsakyta į teorinius klausimus.
-- Atsiskaitymo metu dėstytojas turi teisę paprašyti atlikti praktinio darbo pakeitimus, kuriuos skaitęs teoriją ir savo užduotį savarankiškai padaręs studentas paprastai atlieka reitai (iki pusės minutės)
-- Mėginti atsiskaityti galima tik **vieną kartą**
-- Bandant atsiskaityti ne savo darytą užduotį, ji vertinama 0 balų
+- Kodėl programų sistemos modifikuojamumas / plečiamumas toks svarbus? 
+- Kaip pagerinti modifikuojamumą?
+- Įvadas į:
+  - Dependency Injection (DI)
+  - Interceptors, Decorators, Events
+  - Component-Oriented Programming (COP)
+  - Kas komponentinėse technologijose įgalina modifikuojamumą/plečiamumą?
+- Ką tokio ypatingo turi objektinis programavimas (OOP), kad jis toks populiarus?
 
-## Egzaminas 
+## Klausimas
 
-Prileidimo prie egzamino (ir egzamino perlaikymo) sąlyga:
+Ką atsakytumėte, jei per potencialaus darbdavio interviu būtų klausimas:
 
-- surinkti **2 balus** iš pratybų (be apvalinimo)
+> Kuo iš esmės objektinis programavimas naudingas kuriant didelę ir potencialiai ilgai eksploatuojamą sistemą?
 
-Egzamino metu:
+## Kurso turinys
 
-- Galima naudotis visa **popierine** literatūra
-- Draudžiama dalintis literatūra egzamino metu
-- Draudžiama naudotis kompiuteriais, planšetėmis, mobiliais telefonais, el. knygų skaitytuvais ir pan.
-- Draudžiama naudotis draugų pagalba - egzaminas laikomas neišlaikytu abiems studentams, perlaikymas per oficialų perlaikymą.
+Aspektai, kuo programų sistemų kūrimas skiriasi nuo programų kūrimo
+- Atminties valdymas
+- Saugumas
+- Konkurencinis daugelio naudotojų darbas ir duomenų darna
+- Modifikuojamumas/plečiamumas
+
+## I laboratorinis darbas – 1 balas
+
+1. Pasirinkti instrumentines priemones ir suorganizuoti projekto versijų kontrolę, automatinį surinkimą bei išeities failų kūrimą su IDE (15% vertinimo). 
+2. Suprojektuoti ir sukurti duomenų bazę, ir:
+  - sukurti duomenų esybių klases su ORM ir DAO technologijomis (25%).
+3. Įgyvendinti vieną panaudos atvejį, įtraukiantį naudojo interfeisą bei duomenų modifikavimą duomenų bazėje (60%).
+  - būtinos DB transakcijos
+
+
+- Detalesni reikalavimai dalyko puslapyje
+- Praėjus atsiskaitymo terminui (5 pratybos), įvertinimas mažinamas po 0,1 balo už kiekvieną vėluojamą savaitę.
+
+## II laboratorinis darbas – 1 balas
+
+1. Studentai turi suprojektuoti ir įgyvendinti kelis PS panaudos atvejus (use-case), įtraukiančius: 
+  - darbą su DB, 
+  - dalykinio funkcionalumo komponentus ir 
+  - naudotojo interfeisą
+  - kitus reikalavimus, kurie bus pateikti dalyko svetainėje. 
+
+
+- Atsiskaityti reikia pratybų metu (galima ir per paskutines pratybas). 
+- Sesijos metu atsiskaitymai nevyks.
+
+## Ribojimai
+
+- Laboratorinius darbus atsiskaityti galima tik pratybų metu, tik pratybų klasėje ir tik paskirtas pratybų dėstytojui
+  - Ne el. laiškais, ne sesijos metu
+- Neužtenka, kad demonstruojamas kodo fragmentas veikia
+  - Turite gebėti paaiškinti teorinę medžiagą, atsakyti į dėstytojo klausimus
+- Nedelskite iki paskutinių pratybų
+  - Visada yra ką galima pagerinti/pataisyti
+
+## Slenkstis
+
+1. Neatsiskaičius abiejų laboratorinių darbų (kiekvieno bent 50% reikalavimų) galutinis įvertinimas ne didesnis už 4.
+2. Komandinį projektą leidžiama ginti: 
+  - pateikus techninę projekto ataskaitą;
+  - pateikus ataskaitą apie komandinio programų kūrimo proceso (TSP) taikymą
+
+
+- Reikalavimai techniniam komandinio projekto išpildymui bus pateikti dalyko svetainėje
+- Leistinos technologinės platformos
+  - Ribojimai
+- Nefunkciniai/kokybiniai reikalavimai

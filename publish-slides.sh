@@ -1,3 +1,3 @@
 #!/bin/bash
 
-scp -r slides/* vaidasj@uosis.mif.vu.lt:www/it/slides
+scp -r slides/* vaidasj@uosis.mif.vu.lt:www/tp/slides
