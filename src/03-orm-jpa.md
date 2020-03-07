@@ -79,7 +79,7 @@ Scala: The tricky bit is to carefully distinguish between the full typing rules,
 2. Domain model (Java classes) first – DB schema is generated
 3. _Meet in the middle_ – both domain model and DB are designed by hand, somebody struggles to map the two
 
-> For prototypes, start-ups, short-term projects the first approach is recommended.
+> For prototypes, start-ups, short-term projects the second approach is recommended.
 
 ## ORM and JPA (Java Persistence API)
 
