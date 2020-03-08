@@ -119,7 +119,7 @@ try {
   - otherwise free memory will end soon, since entities loaded by EntityManager are being cached
 - EntityManager is not **thread-safe**
   - different threads must use different EntityManagers
-- It is the responsibility of the application to insure that an instance is managed by only a single EntityManager
+- It is the responsibility of the application to ensure that an instance is managed by only a single EntityManager
 - **So, one global EntityManager per whole system is not a solution**
 
 ## Unmanaged and Managed Persistence Contexts
@@ -161,7 +161,7 @@ try {
 | EM: CDI         | @Inject/@Produces/@Disposes<br><br>em.getTransaction().begin()/.commit() | @Inject/@Produces/@Disposes<br><br>@Transactional |
 | EM: Spring, EJB | @PersistenceContext<br><br>em.getTransaction().begin()/.commit() | @PersistenceContext<br><br>Spring: @Transactional<br>EJB: @TransactionAttribute |
 
-## CDI and JPA (declarative transakcijos)
+## CDI and JPA (declarative transactions)
 
 - `@Inject EntityManager em`;
 - Life-cycle:
