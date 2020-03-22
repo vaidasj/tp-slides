@@ -1,3 +1,4 @@
 slides/
 tmp/
 .vscode
+.DS_Store
