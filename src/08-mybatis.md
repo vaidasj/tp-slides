@@ -99,7 +99,7 @@ Programų sistemų kūrimas
 ## MyBatis
 
 - **SqlSessionFactory**
-  - Once created, the `qlSessionFactory` should exist for the duration of your application execution.
+  - Once created, the `SqlSessionFactory` should exist for the duration of your application execution.
   - The simplest is to use a Singleton pattern or Static Singleton pattern.
 - **SqlSession**
   - Each thread should have its own instance of `SqlSession`. Instances of `SqlSession` are not to be shared and _are not thread safe_. Therefore the best scope is request or method scope. 
