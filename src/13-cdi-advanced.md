@@ -283,3 +283,25 @@ public abstract class LargeTransactionDecorator
 - Unlike other beans, a decorator may be an abstract class. 
   - If there's nothing special the decorator needs to do for a particular method of the decorated interface, you don't need to implement that method. 
 - Interceptors for a method are called before decorators that apply to the method. 
+
+## Asynchronous components
+
+- From CDI specification:
+  - the built-in request and application context objects are active during servlet, web service and EJB invocations, 
+  - the built in session and request context objects are active during servlet and web service invocations. 
+  - the context associated with a built-in normal scope _propagates_ across local, synchronous Java method calls. 
+  - the context **does not propagate** across remote method invocations or to asynchronous processes
+
+## Asynchronous transactions
+
+- Same logic applies for transactions: they are not propogated to asynchronous methods
+- Asynchronous method should be annotated with `@Transactional(REQUIRES_NEW)`
+- If `EntityManager` is used it can not be `RequestScoped`
+
+```java
+@Produces `@TransactionScoped`
+private EntityManager createJTATransactionalEM() {
+    return emf.createEntityManager(
+       SynchronizationType.SYNCHRONIZED);
+}
+```
