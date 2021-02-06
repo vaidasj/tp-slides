@@ -116,7 +116,7 @@ Toks technologijų rinkinys, kad įgalinamas visapusiškas:
 - Ruby on Rails (http://rubyonrails.org/)
 - ... 
 
-## Jakarta EE 8
+## Jakarta EE 
 
 ![Java EE](images/java-ee-8.png "Java EE")
 

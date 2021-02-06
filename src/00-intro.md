@@ -10,7 +10,7 @@ Kursą dėsto partnerystės docentas Vaidas Jusevičius:
 
 - El. paštas: [vaidas.jusevicius@mif.vu.lt](vaidas.jusevicius@mif.vu.lt)
 - Tinklapis: [http://www.mif.vu.lt/~vaidasj/tp](http://www.mif.vu.lt/~vaidasj/tp)
-- Modulio aprašas: [programų sistemų kūrimas](https://klevas.mif.vu.lt/~ragaisis/PSK_2020/6s_PSkurimas_2020.pdf)
+- Modulio aprašas: [programų sistemų kūrimas](http://klevas.mif.vu.lt/~vaidasj/tp/6s_PSkurimas_2021_LT.pdf)
 
 > Atkreipkite dėmesį į savarankiško darbo valandų kiekį!
 
@@ -136,7 +136,7 @@ Aspektai, kuo programų sistemų kūrimas skiriasi nuo programų kūrimo
 
 ## Ribojimai
 
-- Laboratorinius darbus atsiskaityti galima tik pratybų metu, tik pratybų klasėje ir tik paskirtas pratybų dėstytojui
+- Laboratorinius darbus atsiskaityti galima tik pratybų metu ir tik pas paskirtą pratybų dėstytoją
   - Ne el. laiškais, ne sesijos metu
 - Neužtenka, kad demonstruojamas kodo fragmentas veikia
   - Turite gebėti paaiškinti teorinę medžiagą, atsakyti į dėstytojo klausimus
@@ -150,6 +150,7 @@ Aspektai, kuo programų sistemų kūrimas skiriasi nuo programų kūrimo
   - pateikus techninę projekto ataskaitą;
   - pateikus ataskaitą apie komandinio programų kūrimo proceso (TSP) taikymą
 
+## Projektas
 
 - Reikalavimai techniniam komandinio projekto išpildymui bus pateikti dalyko svetainėje
 - Leistinos technologinės platformos
